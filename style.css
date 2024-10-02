@@ -1,0 +1,189 @@
+@font-face {
+    font-display: swap;
+    font-family: "Work Sans";
+    src: url("WorkSans-VariableFont_wght.ttf");
+  }
+  :root {
+    --chambray: hsl(229, 45%, 41%);
+    --dark-purple: hsl(292, 42%, 14%);
+    --dark-violet: hsl(281, 83%, 42%);
+    --grayish-purple: hsl(293, 16%, 49%);
+    --light-pink: hsl(276, 100%, 97%);
+    --pink: hsl(281, 83%, 54%);
+    --white: hsl(0, 0%, 100%);
+  }
+  
+  .background__image, .background__mobile, .background__desktop {
+    object-fit: cover;
+    object-position: bottom;
+    width: inherit;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    align-items: center;
+    background-color: var(--light-pink);
+    display: flex;
+    flex-direction: column;
+    font-family: "Work Sans", sans-serif;
+    gap: 1rem;
+    justify-content: center;
+    line-height: 1.5;
+    min-height: 100%;
+    text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  ::selection {
+    background: var(--dark-violet);
+    color: var(--white);
+  }
+  
+  .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+  
+  .background__container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .background__desktop {
+    height: 20rem;
+  }
+  @media screen and (max-width: 991.98px) {
+    .background__desktop {
+      display: none;
+    }
+  }
+  
+  .background__mobile {
+    height: clamp(14.5rem, 32.25vw, 20rem);
+  }
+  @media screen and (min-width: 992px) {
+    .background__mobile {
+      display: none;
+    }
+  }
+  
+  .card {
+    background-color: var(--white);
+    border-radius: clamp(7px, 1.05vw, 15px);
+    box-shadow: 0px 2px 3.3px rgba(47, 21, 51, 0.011), 0px 4.9px 8px rgba(47, 21, 51, 0.016), 0px 9.3px 15px rgba(47, 21, 51, 0.02), 0px 16.5px 26.8px rgba(47, 21, 51, 0.024), 0px 30.9px 50.1px rgba(47, 21, 51, 0.029), 0px 74px 120px rgba(47, 21, 51, 0.04);
+    margin-top: clamp(3.033rem, 12vw, 3.313rem);
+    padding: clamp(25px, 2.92vw, 40px);
+    width: clamp(17.5rem, 87.2vw, 37.5rem);
+  }
+  
+  .card__heading {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: clamp(1.188rem, 4.9vw, 1.688rem);
+  }
+  .card__heading img {
+    height: clamp(1.563rem, 6.5vw, 2.563rem);
+    width: clamp(1.563rem, 6.5vw, 2.563rem);
+  }
+  .card__heading span {
+    color: var(--dark-purple);
+    font: 700 clamp(2rem, 8.5vw, 3.5rem)/1.2 "Work Sans", sans-serif;
+  }
+  
+  .details {
+    padding: clamp(1.25rem, 5vw, 1.5rem) 0;
+  }
+  .details summary {
+    align-items: center;
+    color: var(--dark-purple);
+    cursor: pointer;
+    display: flex;
+    font: 600 clamp(1rem, 4.2vw, 1.125rem)/1.2 "Work Sans", sans-serif;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+  .details summary::-webkit-details-marker {
+    display: none;
+  }
+  .details summary:hover, .details summary:focus {
+    color: var(--pink);
+  }
+  .details summary img {
+    height: 1.938rem;
+    margin-left: 1rem;
+    width: 1.875rem;
+  }
+  .details summary .summary__icon_minus {
+    display: none;
+  }
+  .details[open] summary .summary__icon_minus {
+    display: inline-block;
+  }
+  .details[open] summary .summary__icon_plus {
+    display: none;
+  }
+  .details p {
+    color: var(--grayish-purple);
+    font-size: clamp(0.875rem, 3.7vw, 1rem);
+    margin-top: 1.5rem;
+  }
+  .details:first-of-type {
+    padding-top: 0;
+  }
+  .details ~ .details {
+    border-top: 1px solid var(--light-pink);
+  }
+  .details:last-of-type {
+    padding-bottom: 0;
+  }
+  
+  .attribution {
+    color: var(--dark-purple);
+    font-size: clamp(0.688rem, 2.7vw, 0.875rem);
+    margin-bottom: 1rem;
+  }
+  .attribution a {
+    color: var(--chambray);
+  }
+  .attribution a:hover, .attribution a:focus {
+    color: var(--dark-purple);
+  }
+  
